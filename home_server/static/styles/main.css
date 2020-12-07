@@ -1,0 +1,83 @@
+/* -*- coding: utf-8; mode: css; -*- */
+/* Copyright 2020 Pradyumna Paranjape */
+/* This file is part of home_server. */
+/* */
+/* home_server is free software: you can redistribute it and/or modify */
+/* it under the terms of the GNU Lesser General Public License as published by */
+/* the Free Software Foundation, either version 3 of the License, or */
+/* (at your option) any later version. */
+/* */
+/* home_server is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the */
+/* GNU Lesser General Public License for more details. */
+/* */
+/* You should have received a copy of the GNU Lesser General Public License */
+/* along with home_server.  If not, see <https://www.gnu.org/licenses/>. */
+/* */
+
+@import "colorvars.css"
+html, body {
+    background: var(--bgcol)
+    background-color: var(--bgcol);
+    color: var(--fgcol);
+    font-family: Fira Code;
+    margin-top: 5rem;
+    height: 100%;
+    min-width: 250px;
+}
+
+.content {
+    margin-top: 5rem;
+    background: var(--bgcol);
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 2.0rem;
+    color: var(--roottitle);
+    display: block;
+    text-decoration: none;
+}
+
+.title:hover {
+    color: var(--roottitlehov);
+    text-decoration: none;
+}
+
+.subtitle {
+    color: var(--subtitle);
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--roottitle);
+}
+
+.bg-navbar {
+  background-color: var(--navbar);
+}
+
+.site-header .navbar-nav .nav-link {
+  color: var(--navbar-color);
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+    margin-top: 5rem;
+    background: var(--bgcol);
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+

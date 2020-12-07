@@ -1,0 +1,50 @@
+<!-- -*- coding: utf-8; mode: web; -*- -->
+<!-- Copyright 2020 Pradyumna Paranjape -->
+<!-- This file is part of home_server. -->
+<!-- -->
+<!-- home_server is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU Lesser General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- home_server is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU Lesser General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU Lesser General Public License -->
+<!-- along with home_server.  If not, see <https://www.gnu.org/licenses/>. -->
+<!-- -->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section col-md-4">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb4"> Request Reset Password </legend>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}
+                {% if form.email.errors%}
+                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for err in form.email.errors %}
+                    <span>{{ err }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.email(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-online-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
+{% block styles %}
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/homepage.css') }}"> -->
+{% endblock styles %}
+
+

@@ -1,0 +1,236 @@
+/* -*- coding: utf-8; mode: css; -*- */
+/* Copyright 2020 Pradyumna Paranjape */
+/* This file is part of home_server. */
+/* */
+/* home_server is free software: you can redistribute it and/or modify */
+/* it under the terms of the GNU Lesser General Public License as published by */
+/* the Free Software Foundation, either version 3 of the License, or */
+/* (at your option) any later version. */
+/* */
+/* home_server is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the */
+/* GNU Lesser General Public License for more details. */
+/* */
+/* You should have received a copy of the GNU Lesser General Public License */
+/* along with home_server.  If not, see <https://www.gnu.org/licenses/>. */
+/* */
+
+.info-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.time-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0rem;
+}
+
+.analog-clock{
+    height: 10rem;
+    width: 20rem;
+    display: grid;
+}
+
+.clock-part{
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#digital-clock{
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: var(--brightgreen);
+    margin: 0.125rem 0rem;
+}
+
+.weather-container {
+    width: 80%;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.inline {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.city {
+    width: 100%;
+    text-align: center;
+}
+
+.interact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.search-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    margin-bottom: 2rem;
+}
+
+#search-title{
+    color: var(--searchcol);
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#search-title #show-search-hint{
+    font-size: 0.5rem;
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0px;
+    margin-left: 2rem;
+    position: absolute;
+    z-index: 1;
+}
+
+#search-title:hover{
+    color: var(--searchhov);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#search-title:hover #show-search-hint {
+    visibility: visible;
+}
+
+#search{
+    display: none;
+    width: auto;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0.125rem 0rem;
+}
+
+#search-field{
+    width: 80%;
+    padding: .75rem 1rem;
+    box-sizing: border-box;
+    background-color: black;
+    border: solid 0px black;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    text-align: center;
+}
+
+#go{
+    width=20%;
+    background-color: var(--bgcol);
+    color: var(--searchcol);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+#go:hover{
+    width=20%;
+    background-color: var(--bghov);
+    color: var(--searchhov);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.quicklink-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    margin: 1rem 0rem;
+}
+
+.quicklink-set{
+    padding: 1rem;
+    background-color: black;
+    border-radius: 3px;
+    font-size: .85rem;
+    height: auto;
+    margin: 0rem 0.5rem;
+}
+
+.quicklink-title {
+    font-size: 1.5rem;
+    color: var(--subtitle);
+    margin: 0em 0em .35em 0em;
+}
+
+.quicklink-inner-container {
+    overflow-y: scroll;
+    height: 80%;
+    vertical-align: top;
+}
+
+.quicklink {
+    text-decoration: none;
+    color: var(--listcol);
+    display:block;
+    font-size: 1rem;
+    margin: .4rem 0rem;
+}
+
+.quicklink:hover {
+    color: var(--listhov);
+}
+
+@media only screen and (max-width: 960px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .interact-container {
+        height: auto;
+}
+    .info-container {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .weather-container {
+        width: auto;
+    }
+    .interact-container > .quicklink-container {
+        flex-direction: column;
+        width: 60%;
+    }
+    #search {
+        display: inline-block;
+    }
+    .quicklink-container > .quicklink-set {
+        width: auto;
+        margin: 1em 0rem;
+    }
+}
+

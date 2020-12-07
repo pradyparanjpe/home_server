@@ -1,0 +1,46 @@
+<!-- -*- coding: utf-8; mode: web; -*- -->
+<!-- Copyright 2020 Pradyumna Paranjape -->
+<!-- This file is part of home_server. -->
+<!-- -->
+<!-- home_server is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU Lesser General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- home_server is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU Lesser General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU Lesser General Public License -->
+<!-- along with home_server.  If not, see <https://www.gnu.org/licenses/>. -->
+<!-- -->
+
+{% extends "base.html" %}
+{% block content %}
+<div id="todo-container" class="col-md-8">
+    <div id="todo-title">ToDo-List</div>
+    <div id="todo-inner-container">
+        <ul id="todoList"></ul>
+        <input type="text" id="text-input" placeholder="Description&#x2026"></input>
+        <span onclick="addItem()" class="addbtn">Add</span>
+    </div>
+    <div class="commit">
+        <span onclick="save()" class="addbtn">Save</span>
+        <span onclick="reload()" class="addbtn">Cancel</span>
+    </div>
+</div>
+{% endblock content %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/todo.css') }}">
+{% endblock styles %}
+{% block scripts %}
+<script>
+ var todoDB = JSON.parse('{{ todoDB| tojson | safe }}');
+ var username = '{{ username }}';
+ var admin = {{ admin }}
+</script>
+<script type="text/javascript" src="static/scripts/todo.js"></script>
+{% endblock scripts %}
+
+

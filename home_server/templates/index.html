@@ -1,0 +1,66 @@
+<!-- -*- coding: utf-8; mode: web; -*- -->
+<!-- Copyright 2020 Pradyumna Paranjape -->
+<!-- This file is part of home_server. -->
+<!-- -->
+<!-- home_server is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU Lesser General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- home_server is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU Lesser General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU Lesser General Public License -->
+<!-- along with home_server.  If not, see <https://www.gnu.org/licenses/>. -->
+<!-- -->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="interact-container" >
+    <div class="search-container" >
+        <div id="search-title"  onclick="toggleSearch()">
+            <span id="show-search-hint">Shift + Space</span>
+        </div>
+        <div id="search" >
+            <input id="search-field" type="text"
+                   name="search-field" />
+            <button id="go" name="launch-searx"
+                    onclick="callSearx()" >
+            </button>
+        </div>
+    </div>
+    <div class="quicklink-container" id="quicklink-container" >
+    </div>
+</div>
+{% endblock content %}
+{% block sidebar %}
+<div class="info-container" >
+    <div class="time-container" onclick="switch_hrs()" >
+        <div class="analog-clock" >
+            <canvas class="clock-part" id="dial"></canvas>
+            <canvas class="clock-part" id="hHrs"></canvas>
+            <canvas class="clock-part" id="hMin"></canvas>
+            <canvas class="clock-part" id="hSec"></canvas>
+        </div>
+        <div id="digital-clock" ></div>
+    </div>
+    <div id="weather" class="weather-container" ></div>
+</div>
+{% endblock sidebar %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/homepage.css') }}">
+{% endblock styles %}
+
+{% block scripts %}
+<script>
+ var display = JSON.parse('{{ display| tojson | safe }}');
+</script>
+<script type="text/javascript" src={{ url_for("static", filename="scripts/homepage.js" ) }}></script>
+<script type="text/javascript" src={{ url_for("static", filename="scripts/clock.js" ) }}></script>
+{% endblock scripts %}
+
+
+

@@ -1,0 +1,13 @@
+flask
+flask_sqlalchemy
+flask_bcrypt
+flask_mail
+flask_login
+flask_wtf
+wtforms
+itsdangerous
+Pillow
+psprint
+email-validator
+pyyaml
+python-dateutil

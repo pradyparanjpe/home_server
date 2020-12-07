@@ -1,0 +1,165 @@
+/* -*- coding: utf-8; mode: css; -*- */
+/* Copyright 2020 Pradyumna Paranjape */
+/* This file is part of home_server. */
+/* */
+/* home_server is free software: you can redistribute it and/or modify */
+/* it under the terms of the GNU Lesser General Public License as published by */
+/* the Free Software Foundation, either version 3 of the License, or */
+/* (at your option) any later version. */
+/* */
+/* home_server is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the */
+/* GNU Lesser General Public License for more details. */
+/* */
+/* You should have received a copy of the GNU Lesser General Public License */
+/* along with home_server.  If not, see <https://www.gnu.org/licenses/>. */
+/* */
+
+@import "colorvars.css";
+#todo-container {
+    /*Wrapper */
+    display: flex;
+    flex-direction: column;
+}
+
+#todo-title {
+    font-size: 3.0rem;
+    color: var(--subtitle);
+    text-align: center;
+    margin: 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.texts {
+    position: relative;
+}
+
+.org-keys {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.main-item {
+    position: relative;
+    left: 0;
+    color: #ffffff;
+}
+
+.qual-text {
+    position: relative;
+    right: 0;
+    font-size: 0.3em;
+}
+
+.org-btn {
+    position: relative;
+    padding: 12px 16px 12px 16px;
+    /* right: 0; */
+    /* top: 0; */
+}
+
+.org-btn:hover {
+    background-color: var(--bghov);
+    color: var(--fgcol);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+ul li {
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    color: var(--listcol);
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li:nth-child(odd) {
+    color:  var(--listodd);
+}
+
+ul li:hover {
+    color: var(--listhov);
+}
+
+ul li.checked {
+    color: var(--listhov);
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+input {
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 80%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.commit {
+    align-items: center;
+}
+
+.addbtn {
+    width=10%;
+    background-color: var(--bgcol);
+    color: var(--searchcol);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.addbtn:hover{
+    background-color: var(--bghov);
+    color: var(--searchhov);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 960px) {
+    .org-keys {
+        position: relative;
+        right: 0;
+        bottom: 0;
+    }
+}
+

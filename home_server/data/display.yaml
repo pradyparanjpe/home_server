@@ -1,0 +1,10 @@
+HOSTNAME:
+appID:
+searchTitle: SEARCH
+searchTerm: GO
+searchEngine: http://www.google.com/
+places:
+  Delhi: DL,IN
+quicklinkSet:
+  sites:
+    google: http://www.google.com/
