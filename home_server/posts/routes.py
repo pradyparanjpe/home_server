@@ -29,7 +29,7 @@ from ..models import Post
 from .. import sql_db, display
 
 
-posts = Blueprint('posts', '__name__')
+posts = Blueprint('posts', __name__, template_folder='templates')
 
 
 @posts.route("/todo", methods=['GET', 'POST'])

@@ -20,3 +20,4 @@
 
 if __name__ in ("__main__", "home_server.__main__", "home_server"):
     from home_server import application
+    application.run(debug=True)

@@ -33,7 +33,7 @@ from ..models import User
 from .. import bcrypt, sql_db, display
 
 
-users = Blueprint('users', '__name__')
+users = Blueprint('users', __name__, template_folder='templates')
 
 
 @users.route('/register', methods=['GET', 'POST'])

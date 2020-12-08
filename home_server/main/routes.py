@@ -27,7 +27,7 @@ from psprint import PRINT as print
 from .. import display
 
 
-main = Blueprint('main', '__name__')
+main = Blueprint('main', __name__, template_folder='templates')
 
 
 @main.route('/')
